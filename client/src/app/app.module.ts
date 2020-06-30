@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +11,7 @@ import { OAuthModule } from 'angular-oauth2-oidc';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LocationDialogComponent } from './components/location-dialog/location-dialog.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MapComponent } from './pages/map/map.component';
 import { AuthGuard } from './services/auth.guard';
@@ -19,6 +21,10 @@ import { AuthGuard } from './services/auth.guard';
     AppComponent,
     MapComponent,
     ToolbarComponent,
+    LocationDialogComponent,
+  ],
+  entryComponents: [
+    LocationDialogComponent
   ],
   imports: [
     AppRoutingModule,
@@ -27,6 +33,7 @@ import { AuthGuard } from './services/auth.guard';
     HelgolandCoreModule,
     HelgolandMapViewModule,
     HttpClientModule,
+    MatDialogModule,
     MatToolbarModule,
     MatButtonModule,
     OAuthModule.forRoot(
